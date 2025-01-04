@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Loading from './components/Loading'; 
+import Loading from './components/Loading';
+import GameBoy from './components/GameBoy'; 
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,8 +23,7 @@ function App() {
       
       {!isLoading && (
         <div>
-          {/* Konten utama website Anda */}
-          <h1>Aji 'ANOMALI' Ananta</h1>
+          <GameBoy />
         </div>
       )}
     </div>

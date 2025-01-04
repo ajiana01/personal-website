@@ -1,0 +1,59 @@
+.gameboy{
+    margin: 20px;
+    padding: 0;
+    background-image: url('/public/img/gameboy-nintendo.png'); /* Ganti dengan path ke file gambar */
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 488px;
+    height: 808px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-text{
+    font-size:medium;
+    text-align: center;
+    /* border: 2px solid red; */
+    padding: 65px 0px 0px 164px;
+}
+
+.battery-text {
+    padding: 110px 0px 0px 40px;
+    /* border: 2px solid red; */
+}
+
+.a-text{
+    font-size: x-large;
+    margin-top: 485px;
+    text-align: right;
+    transform: rotate(-30deg);
+    margin-right: -10px;
+    /* border: 2px solid red; */
+}
+
+.b-text{
+    font-size: x-large;
+    margin-top: -58px;
+    padding-right: 85px;
+    text-align: right;
+    transform: rotate(-30deg);
+    /* border: 2px solid red; */
+}
+
+.start-text{
+    font-size: large;
+    margin-top: -90px;
+    padding-left: 153px;
+    text-align: left;
+    transform: rotate(-27deg);
+    /* border: 2px solid red; */
+}
+
+.select-text{
+    font-size: large;
+    margin-top: 25px;
+    padding-right: 190px;
+    text-align: right;
+    transform: rotate(-27deg);
+    /* border: 2px solid red; */
+}
