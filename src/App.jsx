@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Loading from './components/Loading';
-import GameBoy from './components/GameBoy'; 
+import GameBoy from './components/GameBoy';
+import CircleButtonGameboy from './components/CircleButtonGameboy';
+import RoundSquareButtonGameboy from './components/RoundSquareButtonGameboy';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +26,8 @@ function App() {
       {!isLoading && (
         <div>
           <GameBoy />
+          <CircleButtonGameboy onClick={() => alert('Button clicked!')} />
+          <RoundSquareButtonGameboy onClick={() => alert('Button clicked!')} />
         </div>
       )}
     </div>

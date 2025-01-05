@@ -1,0 +1,49 @@
+.circle-button-gameboy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 10px;
+  }
+
+/* .circle-button-gameboy-container:hover {
+  overflow: hidden;
+  border-radius: 50%; 
+  transition-duration: 1s;
+} */
+
+.circle-button-gameboy-container:active {
+    overflow: hidden; /* Potong konten yang melebihi container */
+    border-radius: 50%; /* Pastikan bentuk tetap lingkaran */
+    transition-duration: 0s, 3s;
+  }
+
+.circle-button-gameboy {
+    width: 54px;
+    height: 54px;
+    background-size: contain;
+    background-position: center; /* Pusatkan gambar */
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: #8D5180;
+    border: 1px solid #33315D;
+    transform: translateY(-6px);
+    border-radius: 100%;
+    box-shadow: 0 6px  #33315D;
+    transition: ease-in-out 0.2s;
+  }
+  
+  /* Efek hover */
+  .circle-button-gameboy:hover {
+    transform: translateY(0px); /* Geser ke bawah */
+    box-shadow: 0 0  #33315D;
+  }
+  
+  /* Efek ketika tombol ditekan */
+  .circle-button-gameboy:active {
+    filter: brightness(75%);
+    transform: translateY(6px); /* Geser ke bawah */
+    box-shadow: 0 -6px  #33315D;
+  }
+  

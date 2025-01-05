@@ -1,5 +1,6 @@
 import React from 'react';
 import './GameBoy.css';
+import CircleButtonGameboy from './CircleButtonGameboy';
 
 function GameBoy() {
     return (
@@ -14,7 +15,9 @@ function GameBoy() {
             <p className='start-text'>START</p>
             <p className='select-text'>SELECT</p>
         </div>
-        <div className="all-buttons"></div>
+        <div className="all-buttons">
+          <CircleButtonGameboy/>
+        </div>
       </div>
     );
   }

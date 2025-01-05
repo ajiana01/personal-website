@@ -1,0 +1,50 @@
+.roundsquare-button-gameboy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 21px;
+    transform: rotate(-10deg);
+    margin-bottom: 10px;
+  }
+
+.roundsquare-button-gameboy-container:active {
+    overflow: hidden;
+    border-radius: 12px;
+    transition-duration: 0s, 3s;
+    transform: rotate(-10deg);
+  }
+
+.roundsquare-button-gameboy {
+    width: 65px;
+    height: 21px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: #414776;
+    border: 2px solid #33315D;
+    transform: rotate(-10deg);
+    transform: translateY(-6px);
+    border-radius: 12px;
+    box-shadow: 0 6px  #33315D;
+    transition: ease-in-out 0.2s;
+  }
+  
+  /* Efek hover */
+  .roundsquare-button-gameboy:hover {
+    transform: rotate(-10deg);
+    transform: translateY(0px); /* Geser ke bawah */
+    box-shadow: 0 0 #33315D;
+    
+  }
+  
+  /* Efek ketika tombol ditekan */
+  .roundsquare-button-gameboy:active {
+    transform: rotate(-10deg);
+    filter: brightness(75%);
+    transform: translateY(6px); /* Geser ke bawah */
+    box-shadow: 0 -6px  #33315D;
+   
+  }
+  
