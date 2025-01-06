@@ -1,0 +1,108 @@
+.wrapper * {
+    box-sizing: border-box;
+  }
+  
+  .wrapper {
+    position: absolute;
+    height: 200px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 200px;
+    /* border: red solid 1px; */
+    padding: 10px;
+  }
+  
+  .wrapper div {
+    padding: 0;
+    margin: 0;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+  }
+  
+  .wrapper .center {
+    z-index: 2;
+    top: 3em;
+  }
+  
+  .wrapper .center-circle {
+    position: static;
+    background: #414776;
+    border-radius: 100%;
+    margin: auto;
+    width: 75%;
+    height: 75%;
+    z-index: 3;
+  }
+  
+  .wrapper .up,
+  .wrapper .right,
+  .wrapper .down,
+  .wrapper .left,
+  .wrapper .center {
+    display: flex;
+    background: #2B2441;
+    padding: 4px;
+    border: 1px solid #222;
+  }
+
+  .wrapper .up {
+    border-radius: 15% 15% 0 0;
+  }
+  
+  .wrapper .right {
+    top: 3em;
+    left: 3em;
+    border-radius: 0 15% 15% 0;
+  }
+  
+  .wrapper .left {
+    top: 3em;
+    right: 12.5em;
+    border-radius: 15% 0 0 15%;
+  }
+  
+  .wrapper .down {
+    top: 5.5em;
+    border-radius: 0 0 15% 15%;
+  }
+  
+  .wrapper .up-triangle,
+  .wrapper .right-triangle,
+  .wrapper .down-triangle,
+  .wrapper .left-triangle {
+    position: absolute;
+    margin: auto;
+    width: 65%;
+    height: 65%;
+    border-left: solid 15px transparent;
+    border-right: solid 15px transparent;
+    border-bottom: solid 20px #414776;
+  }
+  
+  .wrapper .up-triangle {
+    bottom: 16px;
+    right: 8px;
+  }
+  
+  .wrapper .right-triangle {
+    bottom: 8px;
+    right: 0px;
+    transform: rotate(90deg);
+  }
+  
+  .wrapper .down-triangle {
+    bottom: 0px;
+    right: 8px;
+    transform: rotate(180deg);
+  }
+  
+  .wrapper .left-triangle {
+    bottom: 8px;
+    left: 1px;
+    transform: rotate(-90deg);
+  }
+  

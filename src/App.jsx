@@ -4,6 +4,8 @@ import Loading from './components/Loading';
 import GameBoy from './components/GameBoy';
 import CircleButtonGameboy from './components/CircleButtonGameboy';
 import RoundSquareButtonGameboy from './components/RoundSquareButtonGameboy';
+import PlayButtonLottie from './components/PlayButtonLottie';
+import DPadGameboy from './components/DPadGameboy';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +30,8 @@ function App() {
           <GameBoy />
           <CircleButtonGameboy onClick={() => alert('Button clicked!')} />
           <RoundSquareButtonGameboy onClick={() => alert('Button clicked!')} />
+          <PlayButtonLottie />
+          {/* <DPadGameboy /> */}
         </div>
       )}
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './GameBoy.css';
 import CircleButtonGameboy from './CircleButtonGameboy';
+import DPadGameboy from './DPadGameboy';
 
 function GameBoy() {
     return (
@@ -17,6 +18,7 @@ function GameBoy() {
         </div>
         <div className="all-buttons">
           <CircleButtonGameboy/>
+          <DPadGameboy/>
         </div>
       </div>
     );
