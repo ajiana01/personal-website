@@ -22,19 +22,20 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {isLoading && <Loading isVisible={isVisible} />}
+    // <div className="App">
+    //   {isLoading && <Loading isVisible={isVisible} />}
       
-      {!isLoading && (
-        <div>
-          <GameBoy />
-          <CircleButtonGameboy onClick={() => alert('Button clicked!')} />
-          <RoundSquareButtonGameboy onClick={() => alert('Button clicked!')} />
-          <PlayButtonLottie />
-          {/* <DPadGameboy /> */}
-        </div>
-      )}
-    </div>
+    //   {!isLoading && (
+    //     <div>
+    //       <GameBoy />
+    //       <CircleButtonGameboy onClick={() => alert('Button clicked!')} />
+    //       <RoundSquareButtonGameboy onClick={() => alert('Button clicked!')} />
+    //       <PlayButtonLottie />
+    //       {/* <DPadGameboy /> */}
+    //     </div>
+    //   )}
+    // </div>
+    <div></div>
   );
 }
 
