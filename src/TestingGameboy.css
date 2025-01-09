@@ -1,12 +1,12 @@
 /* code from https://codepen.io/dustindwayne/details/VwOyRVp */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Press+Start+2P&display=swap");
-body {
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Press+Start+2P&display=swap"); */
+/* body {
   display: grid;
   place-items: center;
   height: 100vh;
   background-color: #333;
-}
+} */
 .gameguy {
   position: relative;
   width: 3.5in;
@@ -14,8 +14,9 @@ body {
   background-image: linear-gradient(148deg, #33315D 90%, #2B2441 91%);
   border-radius: 15px 15px 45px 15px;
   /* box-shadow: inset 2px 2px 5px rgba(255,255,255,0.85), inset -2px -2px 5px rgba(0,0,0,0.85); */
-  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
-  transition: scale 2s;
+  /* filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+  transition: scale 2s; */
+  border: #2B2441 4px solid;
 }
 .gameguy .onoff {
   position: fixed;
@@ -30,7 +31,7 @@ body {
 .gameguy .onoff .pwswitch {
   height: 5px;
   width: 12px;
-  background-color: #807a88;
+  background-color: #8E8BB6;
   position: absolute;
   border-radius: 2px 2px 0 0;
   top: -5px;
@@ -55,7 +56,6 @@ body {
   top: -95px;
   display: grid;
   place-items: center;
-  font-family: 'Poppins';
 }
 .gameguy .onoff .pwswitch .tip:after {
   content: '\2193';
@@ -78,16 +78,17 @@ body {
   border-radius: 10px;
   position: absolute;
   background-color: rgba(0,0,0,0.125);
-  box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25);
+  /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
 }
 .gameguy .onoff .line:nth-child(1):before {
   content: '\25C0 OFF \25CF ON \25B6';
   position: absolute;
-  color: #c4bebb;
+  color: #8E8BB6;
   width: 75px;
   font-weight: bold;
   font-size: 8px;
-  top: 10px;
+  top: 9px;
+  left: 3px;
   text-shadow: 0 0 1px #000;
 }
 .gameguy .shadow {
@@ -144,7 +145,7 @@ body {
   font-size: 14px;
 }
 .gameguy .tophalf:before {
-  content: 'GAME DUDE';
+  content: 'KONTOLODON';
   position: absolute;
   bottom: -46px;
   font-style: italic;
@@ -157,7 +158,7 @@ body {
   height: 215px;
   top: 10px;
   border-radius: 10px 10px 45px 10px;
-  background-color: #807a88;
+  background-color: #414776;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -169,7 +170,7 @@ body {
   top: 5px;
   width: 2.95in;
   height: 3px;
-  background-color: #7b507a;
+  background-color: #8D5180;
 }
 .gameguy .tophalf .screen:after {
   content: '';
@@ -177,7 +178,7 @@ body {
   top: 12px;
   width: 2.95in;
   height: 2px;
-  background-color: #362d64;
+  background-color: #5F6791;
 }
 .gameguy .tophalf .screen .highlight {
   width: 450px;
@@ -193,19 +194,19 @@ body {
 .gameguy .tophalf .screen .light {
   width: 8px;
   height: 8px;
-  background-color: #8b0000;
+  background-color: #8D5180;
   border-radius: 5px;
   position: absolute;
   display: grid;
   place-items: center;
   left: 25px;
   top: 75px;
-  box-shadow: inset 0px 0px 2px #000, 0px 0px 2px #000;
+  /* box-shadow: inset 0px 0px 2px #000, 0px 0px 2px #000; */
 }
 .gameguy .tophalf .screen .light:before {
   content: 'BATTERY';
   font-size: 8px;
-  color: #fff;
+  color: #8E8BB6;
   position: absolute;
   top: 15px;
   left: -15px;
@@ -217,16 +218,16 @@ body {
   background-color: rgba(255,255,255,0.25);
   border-radius: 3px;
   position: absolute;
-  filter: blur(1px);
+  filter: blur(2px);
 }
 .gameguy .tophalf .screen p {
   position: absolute;
   font-size: 8px;
   text-transform: uppercase;
-  color: #fff;
+  color: #8E8BB6;
   top: -5px;
   right: 50px;
-  background-color: #807a88;
+  background-color: #414776;
   z-index: 99;
   padding: 2px 8px;
 }
@@ -273,7 +274,7 @@ body {
   position: absolute;
   top: 75px;
   left: 75px;
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+  /* filter: drop-shadow(2px 2px 2px rgba(0,0,0,1)); */
 }
 .gameguy .bothalf .dpad:after {
   content: '';
@@ -281,7 +282,8 @@ body {
   height: 20px;
   border-radius: 50%;
   position: absolute;
-  box-shadow: inset -2px -2px 2px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(255,255,255,0.125);
+  /* box-shadow: inset -2px -2px 2px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(255,255,255,0.125); */
+  background-color: #33315D;
 }
 .gameguy .bothalf .dpad .up,
 .gameguy .bothalf .dpad .down,
@@ -311,17 +313,18 @@ body {
   height: 82px;
   display: grid;
   place-items: center;
-  background-color: #272929;
+  background-color: #2B2441;
   border-radius: 5px;
-  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), inset -1px -1px 2px rgba(0,0,0,0.5);
+  /* box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), inset -1px -1px 2px rgba(0,0,0,0.5); */
 }
 .gameguy .bothalf .dpad .updown .line {
   width: 16px;
-  height: 3px;
+  height: 4px;
   border-radius: 5px;
   background-color: transparent;
   z-index: 55;
-  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.25);
+  /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.25); */
+  background-color: #33315D;
 }
 .gameguy .bothalf .dpad .updown .line:nth-child(3) {
   margin-bottom: 20px;
@@ -334,21 +337,22 @@ body {
   justify-content: space-evenly;
   width: 82px;
   height: 30px;
-  background-color: #272929;
+  background-color: #2B2441;
   border-radius: 5px;
-  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), inset -1px -1px 2px rgba(0,0,0,0.5);
+  /* box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), inset -1px -1px 2px rgba(0,0,0,0.5); */
   clip-path: polygon(0% 0%, 0% 100%, 34.5% 100%, 34.5% 0%, 69% 0%, 69% 100%, 100% 100%, 99% 0%);
 }
 .gameguy .bothalf .dpad .leftright .line {
-  width: 3px;
+  width: 4px;
   height: 16px;
   border-radius: 5px;
   background-color: transparent;
   z-index: 55;
-  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.25);
+  /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.25); */
+  background-color: #33315D;
 }
 .gameguy .bothalf .dpad .leftright .line:nth-child(4) {
-  margin-left: 25px;
+  margin-left: 27px;
 }
 .gameguy .bothalf .dpad .leftright .line:nth-child(5) {
   margin-left: 5px;
@@ -361,7 +365,7 @@ body {
   height: 125px;
   top: 25px;
   right: 25px;
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+  /* filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); */
 }
 .gameguy .bothalf .ab:after {
   content: '';
@@ -370,27 +374,27 @@ body {
   width: 110px;
   height: 52px;
   border-radius: 40px;
-  background-color: transparent;
+  background-color: #2B2441;
   position: absolute;
   z-index: 0;
   transform: rotate(327deg);
-  box-shadow: inset -2px -2px 6px rgba(255,255,255,0.25), inset 2px 2px 6px rgba(0,0,0,0.25);
+  /* box-shadow: inset -2px -2px 6px rgba(255,255,255,0.25), inset 2px 2px 6px rgba(0,0,0,0.25); */
 }
 .gameguy .bothalf .ab .b {
   position: absolute;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: #9a2257;
+  background-color: #8D5180;
   z-index: 5;
   cursor: pointer;
-  box-shadow: inset 2px 2px 3px rgba(255,255,255,0.5), inset -2px -2px 3px rgba(0,0,0,0.5);
+  /* box-shadow: inset 2px 2px 3px rgba(255,255,255,0.5), inset -2px -2px 3px rgba(0,0,0,0.5); */
 }
 .gameguy .bothalf .ab .b:before {
   content: 'B';
   position: absolute;
   font-size: 13px;
-  color: #494786;
+  color: #8E8BB6;
   font-weight: bold;
   transform: rotate(320deg);
   bottom: -15px;
@@ -405,14 +409,14 @@ body {
   cursor: pointer;
   width: 40px;
   border-radius: 50%;
-  background-color: #9a2257;
-  box-shadow: inset 2px 2px 3px rgba(255,255,255,0.5), inset -2px -2px 3px rgba(0,0,0,0.5);
+  background-color: #8D5180;
+  /* box-shadow: inset 2px 2px 3px rgba(255,255,255,0.5), inset -2px -2px 3px rgba(0,0,0,0.5); */
 }
 .gameguy .bothalf .ab .a:before {
   content: 'A';
   position: absolute;
   font-size: 13px;
-  color: #494786;
+  color: #8E8BB6;
   font-weight: bold;
   transform: rotate(320deg);
   bottom: -15px;
@@ -425,19 +429,19 @@ body {
   position: absolute;
   bottom: 90px;
   margin-left: 25px;
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+  /* filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); */
 }
 .gameguy .bothalf .ss .select {
   position: absolute;
   width: 45px;
   cursor: pointer;
   height: 12px;
-  background-color: #918b99;
+  background-color: #414776;
   border-radius: 5px;
   margin-right: 105px;
   transform: rotate(330deg);
   display: grid;
-  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5), inset -1px -1px 1px rgba(0,0,0,0.5);
+  /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5), inset -1px -1px 1px rgba(0,0,0,0.5); */
   place-items: center;
 }
 .gameguy .bothalf .ss .select:after {
@@ -447,27 +451,29 @@ body {
   top: 18px;
   position: absolute;
   font-weight: bold;
-  color: #494786;
+  color: #8E8BB6;
 }
 .gameguy .bothalf .ss .select:before {
   content: '';
-  width: 52px;
-  height: 19px;
+  width: 42px;
+  height: 12px;
   border-radius: 16px;
   position: absolute;
-  box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25);
+  /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
+  /* box-shadow: inset -1px -1px 1px rgba(43,36,65,1), inset 1px 1px 1px rgba(43,36,65,1); */
+  border: #2B2441 4px solid;
 }
 .gameguy .bothalf .ss .start {
   position: absolute;
   width: 45px;
   height: 12px;
   cursor: pointer;
-  background-color: #918b99;
+  background-color: #414776;
   border-radius: 5px;
   transform: rotate(330deg);
   display: grid;
   place-items: center;
-  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5), inset -1px -1px 1px rgba(0,0,0,0.5);
+  /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5), inset -1px -1px 1px rgba(0,0,0,0.5); */
 }
 .gameguy .bothalf .ss .start:after {
   content: 'start';
@@ -477,15 +483,16 @@ body {
   left: 6px;
   position: absolute;
   font-weight: bold;
-  color: #494786;
+  color: #8E8BB6;
 }
 .gameguy .bothalf .ss .start:before {
   content: '';
-  width: 52px;
-  height: 19px;
+  width: 42px;
+  height: 12px;
   border-radius: 16px;
   position: absolute;
-  box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25);
+  /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
+  border: #2B2441 4px solid;
 }
 .gameguy .bothalf .hphone {
   position: absolute;
@@ -499,29 +506,29 @@ body {
 }
 .gameguy .bothalf .hphone .line {
   width: 4px;
-  height: 7px;
+  height: 8px;
   background-color: rgba(0,0,0,0.125);
 }
 .gameguy .bothalf .hphone .line:nth-child(1):after {
   content: '';
-  top: -13px;
+  top: -14px;
   left: -30px;
   width: 60px;
   height: 14px;
   border-radius: 10px;
   position: absolute;
   background-color: rgba(0,0,0,0.125);
-  box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25);
+  /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
 }
 .gameguy .bothalf .hphone .line:nth-child(1):before {
   content: '\1F3A7 PHONES';
   position: absolute;
-  color: #c4bebb;
+  color: #8E8BB6;
   width: 75px;
   font-weight: bold;
   font-size: 8px;
-  top: -11px;
-  left: -24px;
+  top: -13px;
+  left: -20px;
   text-shadow: 0 0 1px #000;
 }
 .gameguy .bothalf .speaker {
@@ -539,7 +546,7 @@ body {
   height: 60px;
   border-radius: 10px;
   background-color: rgba(0,0,0,0.225);
-  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.85);
+  /* box-shadow: inset 0px 0px 2px rgba(0,0,0,0.85); */
 }
 .gameguy .slot1 {
   margin-left: 28px;
