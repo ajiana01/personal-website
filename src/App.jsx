@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import GameboyDevice from './components/GameboyDevice';
 import Loading from './components/Loading';
-import GameBoy from './components/GameBoy';
-import CircleButtonGameboy from './components/CircleButtonGameboy';
-import RoundSquareButtonGameboy from './components/RoundSquareButtonGameboy';
-import PlayButtonLottie from './components/PlayButtonLottie';
-import DPadGameboy from './components/DPadGameboy';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,21 +17,17 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
+  return (  
     // <div className="App">
     //   {isLoading && <Loading isVisible={isVisible} />}
       
     //   {!isLoading && (
     //     <div>
-    //       <GameBoy />
-    //       <CircleButtonGameboy onClick={() => alert('Button clicked!')} />
-    //       <RoundSquareButtonGameboy onClick={() => alert('Button clicked!')} />
-    //       <PlayButtonLottie />
-    //       {/* <DPadGameboy /> */}
+    //       <GameboyDevice />
     //     </div>
     //   )}
     // </div>
-    <div></div>
+    <GameboyDevice />
   );
 }
 

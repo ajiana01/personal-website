@@ -1,0 +1,598 @@
+/* code from https://codepen.io/dustindwayne/details/VwOyRVp */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Press+Start+2P&display=swap"); */
+/* body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #333;
+} */
+.gameguy {
+    position: relative;
+    width: 3.5in;
+    height: 5.55in;
+    background-image: linear-gradient(148deg, #33315D 90%, #2B2441 91%);
+    border-radius: 15px 15px 45px 15px;
+    /* box-shadow: inset 2px 2px 5px rgba(255,255,255,0.85), inset -2px -2px 5px rgba(0,0,0,0.85); */
+    /* filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+    transition: scale 2s; */
+    border: #2B2441 4px solid;
+  }
+  .gameguy .onoff {
+    position: fixed;
+    left: 40px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    top: 0px;
+    z-index: 5;
+  }
+  .gameguy .onoff .pwswitch {
+    height: 5px;
+    width: 12px;
+    background-color: #8E8BB6;
+    position: absolute;
+    border-radius: 2px 2px 0 0;
+    top: -5px;
+    left: -5px;
+    display: grid;
+    place-items: center;
+    transition: left 0.25s;
+  }
+  .gameguy .onoff .pwswitch:after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+  }
+  .gameguy .onoff .pwswitch .tip {
+    font-family: 'Poppins';
+    color: #fff;
+    width: 125px;
+    font-size: 24px;
+    position: fixed;
+    top: -95px;
+    display: grid;
+    place-items: center;
+  }
+  .gameguy .onoff .pwswitch .tip:after {
+    content: '\2193';
+    position: absolute;
+    font-size: 32px;
+    top: var(--info);
+    transition: top 1s;
+  }
+  .gameguy .onoff .line {
+    width: 3px;
+    height: 7px;
+    background-color: rgba(0,0,0,0.125);
+  }
+  .gameguy .onoff .line:nth-child(1):after {
+    content: '';
+    top: 7px;
+    left: -5px;
+    width: 60px;
+    height: 15px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.125);
+    /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
+  }
+  .gameguy .onoff .line:nth-child(1):before {
+    content: '\25C0 OFF \25CF ON \25B6';
+    position: absolute;
+    color: #8E8BB6;
+    width: 75px;
+    font-weight: bold;
+    font-size: 8px;
+    top: 9px;
+    left: 3px;
+    text-shadow: 0 0 1px #000;
+  }
+  .gameguy .shadow {
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.125);
+    bottom: -105px;
+    right: -105px;
+    transform: rotate(330deg);
+    filter: blur(2px);
+  }
+  .gameguy .lines {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(0,0,0,0.125);
+    position: absolute;
+    top: 25px;
+    transform: scaleY(-1);
+  }
+  .gameguy .lines:before {
+    content: '';
+    height: 25px;
+    width: 3px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.125);
+    left: 25px;
+    top: 3px;
+  }
+  .gameguy .lines:after {
+    content: '';
+    height: 25px;
+    width: 3px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.125);
+    right: 25px;
+    top: 3px;
+  }
+  .gameguy .tophalf {
+    width: 100%;
+    height: 40%;
+    position: relative;
+    top: 30px;
+    display: grid;
+    place-items: center;
+    color: #494786;
+  }
+  .gameguy .tophalf:after {
+    content: 'Nuntundu';
+    position: absolute;
+    bottom: -43px;
+    font-weight: 800;
+    left: 20px;
+    font-size: 14px;
+  }
+  .gameguy .tophalf:before {
+    content: 'KONTOLODON';
+    position: absolute;
+    bottom: -46px;
+    font-style: italic;
+    left: 108px;
+    font-size: 22px;
+  }
+  .gameguy .tophalf .screen {
+    position: relative;
+    width: 3.15in;
+    height: 215px;
+    top: 10px;
+    border-radius: 10px 10px 45px 10px;
+    background-color: #414776;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 1px rgba(0,0,0,0.85);
+  }
+  .gameguy .tophalf .screen:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 2.95in;
+    height: 3px;
+    background-color: #8D5180;
+  }
+  .gameguy .tophalf .screen:after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    width: 2.95in;
+    height: 2px;
+    background-color: #5F6791;
+  }
+  .gameguy .tophalf .screen .highlight {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(255,255,255,0.095);
+    transform: rotate(20deg);
+    top: -235px;
+    left: -225px;
+    filter: blur(2px);
+  }
+  .gameguy .tophalf .screen .light {
+    width: 8px;
+    height: 8px;
+    background-color: #8D5180;
+    border-radius: 5px;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    left: 25px;
+    top: 75px;
+    /* box-shadow: inset 0px 0px 2px #000, 0px 0px 2px #000; */
+  }
+  .gameguy .tophalf .screen .light:before {
+    content: 'BATTERY';
+    font-size: 8px;
+    color: #8E8BB6;
+    position: absolute;
+    top: 15px;
+    left: -15px;
+  }
+  .gameguy .tophalf .screen .light:after {
+    content: '';
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255,255,255,0.25);
+    border-radius: 3px;
+    position: absolute;
+    filter: blur(2px);
+  }
+  .gameguy .tophalf .screen p {
+    position: absolute;
+    font-size: 8px;
+    text-transform: uppercase;
+    color: #8E8BB6;
+    top: -5px;
+    right: 50px;
+    background-color: #414776;
+    z-index: 99;
+    padding: 2px 8px;
+  }
+  .gameguy .tophalf .screen .cscr {
+    height: 175px;
+    width: 185px;
+    background-color: #62b03b;
+    border-radius: 2px;
+    display: grid;
+    place-items: center;
+    box-shadow: inset 3px 3px 5px rgba(0,0,0,0.65);
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-blend-mode: multiply;
+    filter: brightness(50%);
+  }
+  .gameguy .tophalf .screen .cscr .text {
+    position: absolute;
+    color: #272929;
+    background-color: none;
+    opacity: 0.68;
+    margin-bottom: 225px;
+    font-weight: 800;
+    font-size: 14px;
+    font-family: 'Press Start 2P';
+  }
+  .gameguy .tophalf .screen .cscr .text:after {
+    content: '';
+    font-size: 12px;
+    position: absolute;
+  }
+  .gameguy .bothalf {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    display: grid;
+    place-items: center;
+  }
+  .gameguy .bothalf .dpad {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    /* filter: drop-shadow(2px 2px 2px rgba(0,0,0,1)); */
+  }
+  .gameguy .bothalf .dpad:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    /* box-shadow: inset -2px -2px 2px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(255,255,255,0.125); */
+    background-color: #33315D;
+  }
+  .gameguy .bothalf .dpad .up,
+  .gameguy .bothalf .dpad .down,
+  .gameguy .bothalf .dpad .left,
+  .gameguy .bothalf .dpad .right {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 999;
+    cursor: pointer;
+  }
+  .gameguy .bothalf .dpad .up {
+    top: -35px;
+  }
+  .gameguy .bothalf .dpad .down {
+    top: 15px;
+  }
+  .gameguy .bothalf .dpad .left {
+    left: -38px;
+  }
+  .gameguy .bothalf .dpad .right {
+    right: -38px;
+  }
+  .gameguy .bothalf .dpad .updown {
+    position: absolute;
+    width: 33px;
+    height: 82px;
+    display: grid;
+    place-items: center;
+    background-color: #2B2441;
+    border-radius: 5px;
+    /* box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), inset -1px -1px 2px rgba(0,0,0,0.5); */
+  }
+  .gameguy .bothalf .dpad .updown .line {
+    width: 16px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: transparent;
+    z-index: 55;
+    /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.25); */
+    background-color: #33315D;
+  }
+  .gameguy .bothalf .dpad .updown .line:nth-child(3) {
+    margin-bottom: 20px;
+  }
+  .gameguy .bothalf .dpad .leftright {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: space-evenly;
+    width: 82px;
+    height: 30px;
+    background-color: #2B2441;
+    border-radius: 5px;
+    /* box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), inset -1px -1px 2px rgba(0,0,0,0.5); */
+    clip-path: polygon(0% 0%, 0% 100%, 34.5% 100%, 34.5% 0%, 69% 0%, 69% 100%, 100% 100%, 99% 0%);
+  }
+  .gameguy .bothalf .dpad .leftright .line {
+    width: 4px;
+    height: 16px;
+    border-radius: 5px;
+    background-color: transparent;
+    z-index: 55;
+    /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.25); */
+    background-color: #33315D;
+  }
+  .gameguy .bothalf .dpad .leftright .line:nth-child(4) {
+    margin-left: 27px;
+  }
+  .gameguy .bothalf .dpad .leftright .line:nth-child(5) {
+    margin-left: 5px;
+  }
+  .gameguy .bothalf .ab {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: 150px;
+    height: 125px;
+    top: 25px;
+    right: 25px;
+    /* filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); */
+  }
+  .gameguy .bothalf .ab:after {
+    content: '';
+    left: 45px;
+    top: 19px;
+    width: 110px;
+    height: 52px;
+    border-radius: 40px;
+    background-color: #2B2441;
+    position: absolute;
+    z-index: 0;
+    transform: rotate(327deg);
+    /* box-shadow: inset -2px -2px 6px rgba(255,255,255,0.25), inset 2px 2px 6px rgba(0,0,0,0.25); */
+  }
+  .gameguy .bothalf .ab .b {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #8D5180;
+    z-index: 5;
+    cursor: pointer;
+    /* box-shadow: inset 2px 2px 3px rgba(255,255,255,0.5), inset -2px -2px 3px rgba(0,0,0,0.5); */
+  }
+  .gameguy .bothalf .ab .b:before {
+    content: 'B';
+    position: absolute;
+    font-size: 13px;
+    color: #8E8BB6;
+    font-weight: bold;
+    transform: rotate(320deg);
+    bottom: -15px;
+    left: 40px;
+  }
+  .gameguy .bothalf .ab .a {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    height: 40px;
+    z-index: 5;
+    cursor: pointer;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #8D5180;
+    /* box-shadow: inset 2px 2px 3px rgba(255,255,255,0.5), inset -2px -2px 3px rgba(0,0,0,0.5); */
+  }
+  .gameguy .bothalf .ab .a:before {
+    content: 'A';
+    position: absolute;
+    font-size: 13px;
+    color: #8E8BB6;
+    font-weight: bold;
+    transform: rotate(320deg);
+    bottom: -15px;
+    left: 40px;
+  }
+  .gameguy .bothalf .ss {
+    display: grid;
+    place-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 90px;
+    margin-left: 25px;
+    /* filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); */
+  }
+  .gameguy .bothalf .ss .select {
+    position: absolute;
+    width: 45px;
+    cursor: pointer;
+    height: 12px;
+    background-color: #414776;
+    border-radius: 5px;
+    margin-right: 105px;
+    transform: rotate(330deg);
+    display: grid;
+    /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5), inset -1px -1px 1px rgba(0,0,0,0.5); */
+    place-items: center;
+  }
+  .gameguy .bothalf .ss .select:after {
+    content: 'select';
+    text-transform: uppercase;
+    font-size: 10px;
+    top: 18px;
+    position: absolute;
+    font-weight: bold;
+    color: #8E8BB6;
+  }
+  .gameguy .bothalf .ss .select:before {
+    content: '';
+    width: 42px;
+    height: 12px;
+    border-radius: 16px;
+    position: absolute;
+    /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
+    /* box-shadow: inset -1px -1px 1px rgba(43,36,65,1), inset 1px 1px 1px rgba(43,36,65,1); */
+    border: #2B2441 4px solid;
+  }
+  .gameguy .bothalf .ss .start {
+    position: absolute;
+    width: 45px;
+    height: 12px;
+    cursor: pointer;
+    background-color: #414776;
+    border-radius: 5px;
+    transform: rotate(330deg);
+    display: grid;
+    place-items: center;
+    /* box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5), inset -1px -1px 1px rgba(0,0,0,0.5); */
+  }
+  .gameguy .bothalf .ss .start:after {
+    content: 'start';
+    text-transform: uppercase;
+    font-size: 10px;
+    top: 18px;
+    left: 6px;
+    position: absolute;
+    font-weight: bold;
+    color: #8E8BB6;
+  }
+  .gameguy .bothalf .ss .start:before {
+    content: '';
+    width: 42px;
+    height: 12px;
+    border-radius: 16px;
+    position: absolute;
+    /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
+    border: #2B2441 4px solid;
+  }
+  .gameguy .bothalf .hphone {
+    position: absolute;
+    bottom: -17px;
+    height: 25px;
+    display: grid;
+    place-item: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    left: 50%;
+  }
+  .gameguy .bothalf .hphone .line {
+    width: 4px;
+    height: 8px;
+    background-color: rgba(0,0,0,0.125);
+  }
+  .gameguy .bothalf .hphone .line:nth-child(1):after {
+    content: '';
+    top: -14px;
+    left: -30px;
+    width: 60px;
+    height: 14px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.125);
+    /* box-shadow: inset -1px -1px 1px rgba(255,255,255,0.25), inset 1px 1px 1px rgba(0,0,0,0.25); */
+  }
+  .gameguy .bothalf .hphone .line:nth-child(1):before {
+    content: '\1F3A7 PHONES';
+    position: absolute;
+    color: #8E8BB6;
+    width: 75px;
+    font-weight: bold;
+    font-size: 8px;
+    top: -13px;
+    left: -20px;
+    text-shadow: 0 0 1px #000;
+  }
+  .gameguy .bothalf .speaker {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    transform: rotate(330deg);
+    right: 85px;
+    bottom: 35px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+  }
+  .gameguy .bothalf .speaker .slot {
+    position: absolute;
+    width: 6px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.225);
+    /* box-shadow: inset 0px 0px 2px rgba(0,0,0,0.85); */
+  }
+  .gameguy .slot1 {
+    margin-left: 28px;
+  }
+  .gameguy .slot2 {
+    margin-left: 56px;
+  }
+  .gameguy .slot3 {
+    margin-left: 84px;
+  }
+  .gameguy .slot4 {
+    margin-left: 112px;
+  }
+  .gameguy .slot5 {
+    margin-left: 140px;
+  }
+  .gameguy .slot6 {
+    margin-left: 168px;
+  }
+  :root {
+    --kcode: url("data:image/webp;base64,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");
+    --info: 25px;
+  }
+  @media (max-width: 800px) {
+    .gameguy {
+      scale: 0.75;
+      transition: scale 2s;
+    }
+  }
+  @-moz-keyframes sd {
+    to {
+      margin-bottom: 15px;
+    }
+  }
+  @-webkit-keyframes sd {
+    to {
+      margin-bottom: 15px;
+    }
+  }
+  @-o-keyframes sd {
+    to {
+      margin-bottom: 15px;
+    }
+  }
+  @keyframes sd {
+    to {
+      margin-bottom: 15px;
+    }
+  }
